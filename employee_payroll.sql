@@ -46,7 +46,19 @@ select SUM(salary) FROM employee_payroll;
 # like employee phone, address and department
 
 ALTER TABLE employee_payroll ADD phone_number VARCHAR(255) AFTER name;
-#ALTER TABLE employee_payroll ADD address VARCHAR(255) AFTER phone_number;
-#ALTER TABLE employee_payroll ADD department VARCHAR(255) AFTER address;
+ALTER TABLE employee_payroll ADD address VARCHAR(255) AFTER phone_number;
+ALTER TABLE employee_payroll ADD department VARCHAR(255) AFTER address;
+ALTER TABLE employee_payroll ALTER address set DEFAULT "TED";
+INSERT INTO employee_payroll (name,salary,start) VALUES("Bill",1000000.0,"2018-5-10");
 
+#UC9 : Ability to extend employee_payroll table to have Basic Pay, Deductions, Taxable Pay, Income Tax, Net Pay
+
+ALTER TABLE employee_payroll RENAME COLUMN salary TO basic_pay ;
+ALTER TABLE employee_payroll ADD deduction DOUBLE NOT NULL AFTER basic_pay;
+ALTER TABLE employee_payroll ADD taxable_pay DOUBLE NOT NULL AFTER deduction;
+ALTER TABLE employee_payroll ADD tax DOUBLE NOT NULL AFTER taxable_pay;
+ALTER TABLE employee_payroll ADD net_pay DOUBLE NOT NULL AFTER tax;
+UPDATE employee_payroll set department = "sales" WHERE name = "Terica";
+INSERT INTO employee_payroll (name,department,gender,basic_pay,deduction,taxable_pay,tax,net_pay,start) 
+							VALUES("Terica","marketting","F",3000000.0,1000000.0,2000000.0,500000.0,1500000.0,"2018-5-10");
 
