@@ -41,3 +41,12 @@ select AVG(salary) FROM employee_payroll WHERE gender = "M" GROUP BY gender;
 select MAX(salary) FROM employee_payroll;
 select MIN(salary) FROM employee_payroll;
 select SUM(salary) FROM employee_payroll;
+
+#UC 8 : Ability to extend employee_payroll data to store employee information
+# like employee phone, address and department
+
+ALTER TABLE employee_payroll ADD phone_number VARCHAR(255) AFTER name;
+#ALTER TABLE employee_payroll ADD address VARCHAR(255) AFTER phone_number;
+#ALTER TABLE employee_payroll ADD department VARCHAR(255) AFTER address;
+
+
