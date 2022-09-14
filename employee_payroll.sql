@@ -27,3 +27,10 @@ SELECT * FROM employee_payroll;
 
 select salary FROM employee_payroll WHERE name = "Bill";
 select salary FROM employee_payroll WHERE start BETWEEN CAST("2018-05-13" AS DATE) AND DATE(NOW());
+
+#UC6 : Ability To add gender to employee payroll table 
+
+ALTER TABLE employee_payroll ADD gender CHAR(1) AFTER name;
+UPDATE employee_payroll set gender = "F" WHERE name = "Terica";
+UPDATE employee_payroll set gender = "M" WHERE name = "Bill" or name = "Charlie";
+UPDATE employee_payroll set salry = 400000.0 WHERE name = "Terica";
