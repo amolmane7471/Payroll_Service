@@ -59,6 +59,9 @@ ALTER TABLE employee_payroll ADD taxable_pay DOUBLE NOT NULL AFTER deduction;
 ALTER TABLE employee_payroll ADD tax DOUBLE NOT NULL AFTER taxable_pay;
 ALTER TABLE employee_payroll ADD net_pay DOUBLE NOT NULL AFTER tax;
 UPDATE employee_payroll set department = "sales" WHERE name = "Terica";
+
+#UC10
+
 INSERT INTO employee_payroll (name,department,gender,basic_pay,deduction,taxable_pay,tax,net_pay,start) 
 							VALUES("Terica","marketting","F",3000000.0,1000000.0,2000000.0,500000.0,1500000.0,"2018-5-10");
 
