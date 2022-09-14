@@ -1,9 +1,9 @@
-#UC1 : ability to create a database
+#UC1 : ability to create database
 CREATE DATABASE payroll_service;
 use payroll_service;
 SELECT DATABASE();
 
-#UC2 : ability to create employee_payroll table
+#UC2 : ability to create table
 
 CREATE TABLE employee_payroll(id INT unsigned NOT NULL AUTO_INCREMENT,
 							  name VARCHAR(150) NOT NULL,
@@ -18,3 +18,7 @@ DESCRIBE employee_payroll;
 INSERT INTO employee_payroll (name,salary,start) VALUES("Bill",100000.0,"2018-5-10"),
 													   ("Terica",200000.0,"2019-11-15"),
                                                        ("Charlie",300000.0,"2020-06-24");
+
+#UC4 : ability to retrieve all tha data from table
+
+SELECT * FROM employee_payroll;
