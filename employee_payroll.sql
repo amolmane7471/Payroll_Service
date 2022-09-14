@@ -22,3 +22,8 @@ INSERT INTO employee_payroll (name,salary,start) VALUES("Bill",100000.0,"2018-5-
 #UC4 : ability to retrieve all tha data from table
 
 SELECT * FROM employee_payroll;
+
+#UC5 : ability to retrieve salary data for particular employee
+
+select salary FROM employee_payroll WHERE name = "Bill";
+select salary FROM employee_payroll WHERE start BETWEEN CAST("2018-05-13" AS DATE) AND DATE(NOW());
